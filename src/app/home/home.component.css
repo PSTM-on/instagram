@@ -1,0 +1,17 @@
+.home{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1.7fr 1fr;
+    grid-template-rows: auto;
+    overflow: auto;
+}
+
+.home_background{
+    background-color: rgba(217, 217, 217, 0.2);
+}
+
+app-sidehome{
+    background-color:rgba(217, 217, 217, 0.2);
+}

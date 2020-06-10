@@ -1,0 +1,35 @@
+.storyzone{
+    margin-top: 25px;
+    width: 650px;
+    height: auto;
+    border: 1px solid rgba(210, 210, 210, 0.6);
+    border-radius: 3px;
+    background-color: white;
+    float: right;
+}
+
+.storyprofile{
+    display: grid;
+    grid-template-columns: 100px ;
+    grid-template-rows: 60px 30px;
+    margin: 4px auto;
+}
+
+.storycircle{
+    width: 55px;
+    margin: 4px auto;
+}
+
+img{
+    width: 55px;
+    margin: 4px auto;
+    border-radius: 30px;
+    border: 2px solid rgb(217, 45, 188)
+}
+
+.storyname{
+    margin: 7px;
+    color: rgb(58, 58, 58);
+    font-size: 11px;
+    text-align: center;
+}

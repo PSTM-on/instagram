@@ -1,0 +1,7 @@
+@import '~ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default';
+
+body, html{
+    margin: 0;
+    padding: 0;
+}

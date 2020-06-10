@@ -1,0 +1,64 @@
+.feedzone{
+    width: 650px;
+    height: auto;
+    margin-top: 25px;
+    border: 1px solid rgba(210, 210, 210, 0.6);
+    border-radius: 3px;
+    background-color: white;
+    float: right;
+}
+.writerinfo{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50px 150px ;
+    grid-template-rows: 20px 20px;
+}
+
+.writerpicture{
+    position: relative;
+    float: left;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+
+.writerpicture img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.writerid{
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.writerlocation{
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.postimage{
+    width: 100%;
+}
+
+.postimage img{
+    width: 650px;
+    height: 500px;
+}
+
+.postwriting{
+    width: 100%;
+}
+
+i{
+    font-size: 20px;
+}

@@ -1,0 +1,17 @@
+input{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(217, 217, 217, 0.2);
+}
+
+input::placeholder{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+input::placeholder::before{
+    display: block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-image: url("../../../assets/search.PNG");
+}
