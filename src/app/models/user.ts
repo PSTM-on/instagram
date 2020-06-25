@@ -1,8 +1,12 @@
 export interface UserModel {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-    phone: number;
-    website: string;
+  id: string;
+  name: string;
+  username: string;
+  email: string;
+  city: string;
+  post: string;
+  postimage: string;
+  avatar: string;
+  comment: string;
+  pw?: string;
 }

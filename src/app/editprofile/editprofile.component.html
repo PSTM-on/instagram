@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<div class="myprofile">
+
+    <div class="format">
+
+        <div class="menu">
+          <div class="nav flex-column nav-tabs">
+            <a class="nav-link" routerLink="/accounts/edit">프로필 편집</a>
+            <a class="nav-link" routerLink="/accounts/password/change">비밀번호 변경</a>
+            <a class="nav-link" routerLink="/accounts/manage_access">앱 및 웹사이트</a>
+            <a class="nav-link" routerLink="/accounts/emails/settings">이메일 및 SMS</a>
+            <a class="nav-link" routerLink="/accounts/push/web/settings">푸시 알림</a>
+            <a class="nav-link" routerLink="/accounts/contact_history">연락처 관리</a>
+            <a class="nav-link" routerLink="/accounts/privacy_and_security">공개 범위 및 보안</a>
+            <a class="nav-link" routerLink="/accounts/session/login_activity">로그인 활동</a>
+            <a class="nav-link" routerLink="/accounts/emails/emails_sent">Instagram에서 보낸 이메일</a>
+          </div>
+        </div>
+
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+        
+    </div>
+    <app-mypage-footer></app-mypage-footer>
+</div>

@@ -1,0 +1,203 @@
+.mypage{
+    background-color: rgba(217, 217, 217, 0.2);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.myprofile{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 220px;
+    margin-top: 40px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 0;
+}
+
+.profile_image{
+    text-align: center;
+}
+
+.profile_image img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+}
+
+.username{
+    font-size: 25px;
+}
+
+.info{
+    font-size: 15px;
+}
+
+.name{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.mypost{
+    position: relative;
+    display: block;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: center;
+}
+
+.nav-pills {
+    margin: 0;
+    padding: 0 15%;
+    text-align: center;
+    align-content: center;
+}
+
+.lefttab {
+    margin-left: 20%;
+    margin-right: 3%;
+}
+
+.tab{
+    margin: 0 3%;
+}
+
+.righttab{
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+.tabcontent .myimage{
+    display: block;
+    float: left;
+    margin: 0;
+    width: 33.333%;
+    height: 33.333%;
+}
+
+.tabcontent .myimage img{
+    margin: 2%;
+    width: 96%;
+    height: 96%;
+}
+
+.smallblank{
+    width: 100%;
+    height: 20px;
+}
+
+.blank{
+    width: 100%;
+    height: 50px;
+}
+
+.bigblank{
+    width: 100%;
+    height: 500px;
+}
+
+.edit_icon{
+    width: 90px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 5px;
+    outline: none;
+    margin-left: 10px;
+}
+
+.edit_icon a {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.setting_icon{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+
+.rcunfollow{
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+}
+
+.settingmodal .modal-body{
+    padding: 10px 0;
+}
+
+.settingmodal .modal-body button{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.settingmodal .modal-footer{
+    padding: 10px 0;
+}
+
+.settingmodal .modal-footer button{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 14px;
+}
+
+.reportmodal .modal-header p{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.reportmodal .send{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(22, 142, 255);
+    font-size: 15px;
+    color: white;
+    float: left;
+    height: 35px;
+}
+
+.reportmodal .file{
+    outline: none;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 5px;
+    background-color: white;
+    font-size: 15px;
+    float: right;
+    height: 35px;
+}
+
+.reportmodal .close{
+    outline: none;
+}
+
+.reportmodal p{
+    font-size: 12px;
+    color: rgb(177, 177, 177);
+    text-align: left;
+}

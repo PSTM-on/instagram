@@ -1,4 +1,3 @@
-export interface CommentModel {
-    id: string;
-    comment: string;
+export interface CommentInputModel {
+    value: string;
 }

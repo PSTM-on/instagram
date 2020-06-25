@@ -1,7 +1,52 @@
-<div class="home">
+<ng-container *ngIf="loginUser !== null">
+  <app-header></app-header>
+  <div class="home">
     <div class="home_background">
-        <app-storybar></app-storybar>
-        <app-newsfeed></app-newsfeed>
+      <app-storybar></app-storybar>
+      <app-newsfeed></app-newsfeed>
     </div>
     <app-sidehome></app-sidehome>
-</div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="loginUser === null">
+  <div class="landing">
+    <div class="grid">
+      <div class="iphoneimage">
+        <img class="iphone" [src]="iphone" />
+      </div>
+
+      <div class="input">
+        <div class="loginbox">
+          <img class="logo" [src]="biglogo" />
+          <div class="logintext" *ngIf="allusers">
+
+            <input type='text' class='form-control' [(ngModel)]="id" />
+            <input type='text' class='form-control' [(ngModel)]="pw" />
+            <button class='loginbtn' (click)='login()'>LogIn</button><br />
+            <div class="or">
+              <hr /> <span>또는</span>
+              <hr />
+            </div>
+            <div class="facebooklogin"><img [src]="facebook">
+              <a class="login" href="#">Facebook으로 로그인</a><br />
+              <a class="password" href="#">비밀번호를 잊으셨나요?</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="register">
+          <span>계정이 없으신가요?</span>
+          <a href="#"> 가입하기</a>
+        </div>
+
+        <div class="download">
+          <span>앱을 다운로드하세요.</span><br />
+          <button><img class="apps" [src]="appstore" /></button>
+          <button><img class="google" [src]="googleplay" /></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ng-container>

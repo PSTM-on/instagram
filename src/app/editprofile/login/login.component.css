@@ -1,0 +1,78 @@
+.email {
+  padding: 10%;
+}
+
+.title {
+  font-size: 23px;
+}
+
+.smalltitle {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mapview1 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 200px 50px;
+  text-align: center;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 7px;
+}
+
+.mapview2 {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 200px 50px;
+    text-align: center;
+  }
+
+.card, .card-body{
+    padding: 0;
+}
+
+.click1,
+.click2 {
+  padding: 12px 0;
+  position: relative;
+}
+
+.click2:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  display: block;
+  width: 100%;
+  height: 30px;
+  border-left: 1px solid rgb(197, 197, 197);
+  margin: 10px 0;
+}
+
+.mapview span {
+  font-weight: bold;
+  font-size: 14px;
+  width: 50px;
+}
+
+agm-map {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  height: 200px;
+}
+
+.citybtn{
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    outline: none;
+}
+
+.arrow{
+    float: right;
+}

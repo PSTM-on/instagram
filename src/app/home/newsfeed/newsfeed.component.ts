@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { PostModel } from '../../models/post';
-import { PhotoModel } from '../../models/photo';
-import { ProfileModel } from '../../models/profile';
 import { UserModel } from '../../models/user';
-
-import { InstaService } from '../../services/insta.service';
+import { FriendinfoService } from '../../services/friendinfo.service';
+import { GeneralService } from '../../services/general.service';
 
 @Component({
   selector: 'app-newsfeed',
@@ -15,47 +12,27 @@ import { InstaService } from '../../services/insta.service';
 })
 export class NewsfeedComponent implements OnInit {
 
-  posts: PostModel;
-  photos: PhotoModel;
-  profiles1: ProfileModel;
-  profiles2: ProfileModel;
-  users: UserModel;
+  friendinfo: UserModel;
+  chat = '../../../assets/chat.svg';
+  share = '../../../assets/share.svg';
 
   constructor(
-    private instaService: InstaService
-  ) {
-  }
+    private friendinfoService: FriendinfoService,
+    private generalService: GeneralService,
+  ) { }
 
   ngOnInit() {
-  this.getPhotos();
-  this.getPosts();
-  this.getProfiles1();
-  this.getProfiles2();
-  this.getUsers();
+  this.getFriendinfo();
   }
 
-  getPosts() {
-    this.instaService.getPosts()
-      .subscribe(posts => this.posts = posts);
+  getFriendinfo() {
+    this.friendinfoService.getFriendinfo()
+      .subscribe(friendinfo => this.friendinfo = friendinfo);
   }
 
-  getPhotos(): void{
-  this.instaService.getPhotos()
-    .subscribe(photos => this.photos = photos );
+  photoIndex(i){
+    this.generalService.getPhotoIndex = i;
+    console.log(this.generalService.getPhotoIndex);
   }
 
-  getProfiles1() {
-    this.instaService.getProfiles1()
-      .subscribe((profiles1) => this.profiles1 = profiles1);
-  }
-
-  getProfiles2() {
-    this.instaService.getProfiles2()
-      .subscribe((profiles2) => this.profiles2 = profiles2);
-  }
-
-  getUsers() {
-    this.instaService.getUsers()
-      .subscribe(users => this.users = users);
-  }
 }

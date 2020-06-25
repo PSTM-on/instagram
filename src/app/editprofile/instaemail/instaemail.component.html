@@ -1,0 +1,24 @@
+<div class="access">
+    <p class="title">Instagram에서 보낸 이메일</p>
+    <ul ngbNav #nav="ngbNav" class="nav-pills">
+  
+      <li ngbNavItem class="tab1">
+        <a ngbNavLink>보안</a>
+        <ng-template ngbNavContent href="#active">
+          <div id="active">
+            <p>최근 14일 동안 Instagram이 회원님에게 보낸 보안 및 로그인 관련 이메일 리스트입니다. 이 리스트를 사용하여 회원님이 받은 이메일이 실제 Instagram에서 보낸 것이 맞는지 확인할 수 있습니다. 더 알아보기.</p>
+          </div>
+        </ng-template>
+      </li>
+  
+      <li ngbNavItem class="tab2">
+        <a ngbNavLink>기타</a>
+        <ng-template ngbNavContent>
+          <p>최근 14일 동안 Instagram이 회원님에게 보낸 보안 및 로그인 외 다른 내용의 이메일 리스트입니다. 이 리스트를 사용하여 회원님이 받은 이메일이 실제 Instagram에서 보낸 것이 맞는지 확인할 수 있습니다. 더 알아보기.</p>
+        </ng-template>
+      </li>
+  
+    </ul>
+    <div [ngbNavOutlet]="nav" class="navout"></div>
+  </div>
+  

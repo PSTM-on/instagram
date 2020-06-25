@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { AfterContentInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+
 declare var $: any;
 
 @Component({
@@ -8,5 +8,7 @@ declare var $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(){}
 
 }

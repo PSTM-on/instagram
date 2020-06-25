@@ -1,0 +1,21 @@
+.footer{
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 12px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: rgb(30, 51, 121);
+    font-weight: bold;
+    margin: 0 1%;
+}
+
+.footer span{
+    color: rgb(146, 146, 146);
+}

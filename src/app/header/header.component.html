@@ -1,22 +1,33 @@
 <div class="header">
-    <button class="logo_button">
-        <a [href]="logoUrl"><img [src]="logoImage"/></a>
+  <button class="logo_button">
+    <a routerLink="/"><img [src]="logoImage" /></a>
+  </button>
+
+  <app-header-search></app-header-search>
+
+  <div class="navigation">
+
+    <button class="navigation_icon">
+      <a routerLink="/"><img [src]="homeIcon" /></a>
     </button>
-    
-    <app-header-search></app-header-search>
-    
-    <div class="navigation">
-        <button class="navigation_icon">
-            <a [href]="homeUrl"><img [src]="homeIcon"/></a>
-        </button>
-        <button class="navigation_icon">
-            <a [href]="exploreUrl"><img [src]="exploreIcon"/></a>
-        </button>
-        <button class="navigation_icon">
-            <img [src]="likeIcon"/>
-        </button>
-        <button class="navigation_icon">
-            <a [href]="mypageUrl"><img [src]="mypageIcon"/></a>
-        </button>
+
+    <button class="navigation_icon">
+      <a routerLink="/explore"><img [src]="exploreIcon" /></a>
+    </button>
+
+    <div ngbDropdown class="d-inline-block">
+      <button class="navigation_icon" id="dropdownBasic1" ngbDropdownToggle><img [src]="likeIcon" /></button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Action - 1</button>
+        <div class="dropdown-divider"></div>
+        <button ngbDropdownItem>Another Action</button>
+        <div class="dropdown-divider"></div>
+        <button ngbDropdownItem>Something else is here</button>
+      </div>
     </div>
+
+    <button class="navigation_icon profile_image">
+      <a routerLink="/{{myinfo.username}}"><img [src]="myinfo.avatar" /></a>
+    </button>
+  </div>
 </div>

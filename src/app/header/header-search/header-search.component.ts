@@ -5,8 +5,8 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-import { InstaService } from '../../services/insta.service';
-import { PostModel } from '../../models/post';
+import { AllusersService } from '../../services/allusers.service';
+import { UserModel } from '../../models/user';
 
 @Component({
   selector: 'app-header-search',
@@ -16,10 +16,10 @@ import { PostModel } from '../../models/post';
 export class HeaderSearchComponent implements OnInit {
 
   searchIcon: '../../assets/search.PNG';
-  posts$: Observable<PostModel[]>;
+  users$: Observable<UserModel[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private instaService: InstaService) {}
+  constructor(private allusersService: AllusersService) {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
@@ -27,7 +27,7 @@ export class HeaderSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.posts$ = this.searchTerms.pipe(
+    this.users$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
@@ -35,7 +35,7 @@ export class HeaderSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.instaService.searchHeroes(term)),
+      switchMap((term: string) => this.allusersService.searchHeroes(term)),
     );
   }
 

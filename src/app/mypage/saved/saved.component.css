@@ -1,0 +1,124 @@
+.tabcontent .myimage{
+    display: block;
+    float: left;
+    margin: 0;
+    width: 33.333%;
+    height: 33.333%;
+}
+
+.tabcontent .myimage img{
+    margin: 2%;
+    width: 96%;
+    height: 96%;
+}
+
+.blank{
+    width: 100%;
+    height: 20px;
+}
+
+.bigblank{
+    width: 100%;
+    height: 500px;
+}
+
+.close{
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    outline: none;
+}
+
+.photoframe{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    height: 55vh;
+    text-align: left;
+}
+
+.postimage {
+    width: 100%;
+    height: 100%;
+}
+
+.textarea{
+    padding: 20px;
+}
+
+.profilepicture{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.username{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.writing{
+    font-size: 14px;
+}
+
+.solid{
+    animation-name: bigger;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+}
+
+.empty{
+    animation-name: bigger;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+}
+
+@keyframes bigger{
+    from{
+        transform: scale(1.0, 1.0);
+    }
+    50%{
+        transform: scale(1.1, 1.1);
+    }
+    to{
+        transform: scale(1.0, 1.0);
+    }
+}
+
+.name{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.commentcontent{
+    font-size: 13px;
+}
+
+.makecomment{
+    border-top: 1px solid rgb(207, 207, 207);
+}
+
+.makecomment input{
+    width: 90%;
+    height: 50px;
+    font-size: 13px;
+    border: none;
+    outline: none;
+}
+
+.makecomment button{
+    float: right;
+    margin-top: 20px;
+    padding: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(59, 114, 235);
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+}

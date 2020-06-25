@@ -2,86 +2,14 @@
 
   <owl-carousel-o [options]="customOptions">
 
-    <ng-template carouselSlide>
-      <div class="storyprofile">
-        <div class="storycircle" *ngIf=profiles1><img [src]='profiles1?.data[0].avatar'></div>
-        <div class="storyname" *ngIf=users><span>{{users[0].username}}</span></div>
-      </div>
-    </ng-template>
-
-    <ng-template carouselSlide>
-      <div class="storyprofile">
-        <div class="storycircle" *ngIf=profiles1><img [src]='profiles1?.data[1].avatar'></div>
-        <div class="storyname" *ngIf=users><span>{{users[1].username}}</span></div>
-      </div>
-    </ng-template>
-
-    <ng-template carouselSlide>
-      <div class="storyprofile">
-        <div class="storycircle" *ngIf=profiles1><img [src]='profiles1?.data[2].avatar'></div>
-        <div class="storyname" *ngIf=users><span>{{users[2].username}}</span></div>
-      </div>
-    </ng-template>
-
-    <ng-template carouselSlide>
-      <div class="storyprofile">
-        <div class="storycircle" *ngIf=profiles1><img [src]='profiles1?.data[3].avatar'></div>
-        <div class="storyname" *ngIf=users><span>{{users[3].username}}</span></div>
-      </div>
-    </ng-template>
-
-    <ng-template carouselSlide>
-      <div class="storyprofile">
-        <div class="storycircle" *ngIf=profiles1><img [src]='profiles1?.data[4].avatar'></div>
-        <div class="storyname" *ngIf=users><span>{{users[4].username}}</span></div>
-      </div>
-    </ng-template>
-
-    <ng-template carouselSlide>
-      <div class="storyprofile">
-        <div class="storycircle" *ngIf=profiles1><img [src]='profiles1?.data[5].avatar'></div>
-        <div class="storyname" *ngIf=users><span>{{users[5].username}}</span></div>
-      </div>
-    </ng-template>
-
-    <ng-template carouselSlide>
-        <div class="storyprofile">
-          <div class="storycircle" *ngIf=profiles2><img [src]='profiles2?.data[0].avatar'></div>
-          <div class="storyname" *ngIf=users><span>{{users[6].username}}</span></div>
-        </div>
-      </ng-template>
-
+    <ng-container *ngFor="let user of friendinfo; index as i">
       <ng-template carouselSlide>
         <div class="storyprofile">
-          <div class="storycircle" *ngIf=profiles2><img [src]='profiles2?.data[1].avatar'></div>
-          <div class="storyname" *ngIf=users><span>{{users[7].username}}</span></div>
+          <div class="storycircle" *ngIf=friendinfo><img [src]='friendinfo[i].avatar'></div>
+          <div class="storyname" *ngIf=friendinfo><span>{{friendinfo[i].username}}</span></div>
         </div>
       </ng-template>
-
-      <ng-template carouselSlide>
-        <div class="storyprofile">
-          <div class="storycircle" *ngIf=profiles2><img [src]='profiles2?.data[2].avatar'></div>
-          <div class="storyname" *ngIf=users><span>{{users[8].username}}</span></div>
-        </div>
-      </ng-template>
-
-      <ng-template carouselSlide>
-        <div class="storyprofile">
-          <div class="storycircle" *ngIf=profiles2><img [src]='profiles2?.data[3].avatar'></div>
-          <div class="storyname" *ngIf=users><span>{{users[9].username}}</span></div>
-        </div>
-      </ng-template>
-
-
-
-    <!-- <script>
-      for (let i = 0; i < 6; i++) {
-        document.write("<ng-template carouselSlide>\n");
-        document.write("<div class=\"storycircle\" *ngIf=profiles><img [src]='profiles?.data[" + i + "].avatar'></div>\n"); 
-        document.write("<div class=\"storyname\" *ngIf=users><span>{{users[" + i + "].username}}</span></div>\n"); 
-        document.write("</ng-template>\n");
-        }
-    </script> -->
+    </ng-container>
 
   </owl-carousel-o>
 

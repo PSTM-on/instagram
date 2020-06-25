@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserModel } from '../models/user';
+import { MyinfoService } from '../services/myinfo.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,26 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  logoUrl = 'http://localhost:4200';
-  logoImage = '../../../assets/logo.PNG';
+  myinfo: UserModel;
 
-  homeUrl = 'http://localhost:4200';
-  homeIcon = '../../../assets/home.PNG';
-
-  exploreUrl = 'http://localhost:4200';
-  exploreIcon = '../../../assets/explore.PNG';
-
-  likeIcon = '../../../assets/like.PNG';
-
-  mypageUrl = 'http://localhost:4200';
-  mypageIcon = '../../../assets/profile.PNG';
+  logoImage = '../../assets/logo.PNG';
+  homeIcon = '../../assets/home.PNG';
+  exploreIcon = '../../assets/explore.PNG';
+  likeIcon = '../../assets/like.PNG';
 
   constructor(
+    private myinfoService: MyinfoService
   ) { }
 
-  ngOnInit(): void {
-
+  ngOnInit() {
+  this.getMyinfo();
   }
 
+  getMyinfo() {
+    this.myinfoService.getMyinfo()
+      .subscribe(myinfo => this.myinfo = myinfo);
+  }
 
 }

@@ -1,0 +1,4 @@
+<div class="heart" (click)="like = !like">
+    <img class="empty" *ngIf="like" [src]="heartempty"/>
+    <img class="solid" *ngIf="!like" [src]="heartsolid"/>
+</div>

@@ -1,48 +1,37 @@
-<div class="myprofile"><img [src]='profiles2?.data[5].avatar' /></div>
-<div class="myinfo">
-  <span class="myid">{{users[9].username}}<br></span>
-  <span class="myname">{{users[9].name}}</span>
+<div class="myprofile" *ngIf=myinfo><img [src]='myinfo.avatar' /></div>
+<div class="myinfo" *ngIf=myinfo>
+  <span class="myid">{{myinfo.username}}<br></span>
+  <span class="myname">{{myinfo.name}}</span>
 </div>
 
-<div class="recommand">
+<div class="recommandtitle">
   <span class="rctitle">회원님을 위한 추천</span>
   <span class="rcall">모두보기</span>
+</div>
 
-  <div class="rcprofile"><img [src]='profiles1?.data[0].avatar' /></div>
-  <div class="rcinfo">
-    <span class="rcid">{{users[0].username}}<br></span>
+<div class="recommand" *ngFor="let user of friendinfo | userslice:0:5; index as i; ">
+  <div class="rcprofile" *ngIf="friendinfo"><img [src]='friendinfo[i].avatar' /></div>
+  <div class="rcinfo" *ngIf="friendinfo">
+    <a class="rcid" routerLink="/{{friendinfo[i].username}}" (click)="friendpage(i)">{{friendinfo[i].username}}</a><br/>
     <span class="rcstatus">회원님을 팔로우합니다</span>
   </div>
-  <span class="rcfollow">팔로우</span>
+  <button *ngIf="!friendinfo[i].following" class="rcfollow" (click)="followchange(i)">팔로우</button>
+  <button *ngIf="friendinfo[i].following" class="rcunfollow" (click)="open(mymodal)">팔로잉</button>
 
-  <div class="rcprofile"><img [src]='profiles1?.data[1].avatar' /></div>
-  <div class="rcinfo">
-    <span class="rcid">{{users[1].username}}<br></span>
-    <span class="rcstatus">회원님을 팔로우합니다</span>
-  </div>
-  <span class="rcfollow">팔로우</span>
-
-  <div class="rcprofile"><img [src]='profiles1?.data[2].avatar' /></div>
-  <div class="rcinfo">
-    <span class="rcid">{{users[2].username}}<br></span>
-    <span class="rcstatus">회원님을 팔로우합니다</span>
-  </div>
-  <span class="rcfollow">팔로우</span>
-
-  <div class="rcprofile"><img [src]='profiles1?.data[3].avatar' /></div>
-  <div class="rcinfo">
-    <span class="rcid">{{users[3].username}}<br></span>
-    <span class="rcstatus">회원님을 팔로우합니다</span>
-  </div>
-  <span class="rcfollow">팔로우</span>
-
-  <div class="rcprofile"><img [src]='profiles1?.data[4].avatar' /></div>
-  <div class="rcinfo">
-    <span class="rcid">{{users[4].username}}<br></span>
-    <span class="rcstatus">회원님을 팔로우합니다</span>
-  </div>
-  <span class="rcfollow">팔로우</span>
-
+  <ng-template #mymodal let-modal class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" *ngIf="friendinfo">
+      <div class="modal-body">
+        <img [src]="friendinfo[i].avatar" />
+        <p>{{friendinfo[i].username}}님의 팔로우를 취소하시겠어요?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="unfollowbtn" (click)="followchange(i)">팔로우 취소</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cancelbtn" data-dismiss="modal" (click)="modal.dismiss()">취소</button>
+      </div>
+    </div>
+  </ng-template>
 </div>
 
 <app-footer></app-footer>

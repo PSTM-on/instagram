@@ -1,37 +1,25 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="feedzone" *ngFor="let user of friendinfo; index as i">
 
-
-<div class="feedzone" *ngIf=photos>
-
-  <div class="writerinfo">
-    <div class="writerpicture" *ngIf=profiles2><img [src]='profiles1?.data[0].avatar'></div>
-    <div class="writerid" *ngIf=users><span>{{users[0].username}}</span></div>
-    <div class="writerlocation"><span>{{users[0].address.city}}</span></div>
+  <div class="writerinfo" *ngIf=friendinfo>
+    <div class="writerpicture"><img [src]='friendinfo[i].avatar'></div>
+    <div class="writerid"><span>{{friendinfo[i].username}}</span></div>
+    <div class="writerlocation"><span>{{friendinfo[i].city}}</span></div>
   </div>
 
-  <div class="postimage"><img [src]='photos[0].url'/></div>
-  <div class="postwriting"><p>{{posts[0].body}}</p></div>
+  <div class="postimage" *ngIf=friendinfo><img [src]='friendinfo[i].postimage' /></div>
+  <div class="blank"></div>
+
+  <div class="icons">
+    <app-like></app-like>
+    <button class="chat" (click)="photoIndex(i)"><a routerLink="/photo"><img [src]="chat"></a></button>
+    <button class="share"><img [src]="share"></button>
+  </div>
+
+  <div class="postwriting" *ngIf=friendinfo>
+    <span class="name">{{friendinfo[i].username}}</span>
+    <span class="content"> {{friendinfo[i].post}}</span>
+  </div>
+
   <app-comment></app-comment>
-  
-  <script>
-    function myFunction(x) {
-    x.classList.toggle("fa-heart");
-  }
-  </script>
-  <i onclick="myFunction(this)" class="far fa-heart"></i>
 
 </div>
-
-<div class="feedzone" *ngIf=photos>
-
-    <div class="writerinfo">
-      <div class="writerpicture" *ngIf=profiles2><img [src]='profiles1?.data[1].avatar'></div>
-      <div class="writerid" *ngIf=users><span>{{users[1].username}}</span></div>
-      <div class="writerlocation"><span>{{users[1].address.city}}</span></div>
-    </div>
-  
-    <div class="postimage"><img [src]='photos[1].url'/></div>
-    <div class="postwriting"><p>{{posts[1].body}}</p></div>
-    
-  </div>
-  

@@ -15,3 +15,167 @@
 app-sidehome{
     background-color:rgba(217, 217, 217, 0.2);
 }
+
+.landing{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(252, 252, 252);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 420px 400px;
+    grid-template-rows: 650px;
+    width: 850px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.iphoneimage{
+    float: right;
+    width: 100%;
+}
+
+.iphoneimage .iphone{
+    width: 95%;
+    margin-right: 5%;
+}
+
+@media (max-width: 870px){
+    .grid{
+        display: grid;
+        grid-template-columns: 400px;
+        grid-template-rows: 650px;
+        width: 420px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .iphoneimage{
+        display: none;
+    }
+    .iphoneimage .iphone{
+        display: none;
+    }
+}
+
+.logintext{
+    text-align: center;
+}
+
+.loginbox{
+    float: left;
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    border: 1px solid rgb(196, 196, 196);
+    margin-left: 1%;
+    text-align: center;
+    position: relative;
+}
+
+.logo{
+    margin-top: 25px;
+    width: 50%;
+    margin: 30px auto 20px auto;
+}
+
+.form-control{
+    width: 70%;
+    margin: 5px auto;
+}
+
+.loginbtn{
+    width: 70%;
+    height: 30px;
+    margin: 10px auto 10px auto;
+    background-color: rgb(73, 167, 255);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.or{
+    width: 70%;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.or hr{
+    width: 35%;
+    float: left;
+}
+
+.or span{
+    width: 30%;
+    float: left;
+    color: rgb(155, 155, 155);
+}
+
+.facebooklogin{
+    width: 70%;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.facebooklogin .login{
+    color: rgb(6, 29, 95);
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.facebooklogin .password{
+    margin-top: 10px;
+    color: rgb(6, 29, 95);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.register{
+    float: left;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 1px solid rgb(196, 196, 196);
+    margin-left: 1%;
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+    padding-top: 30px;
+}
+
+.register span{
+    font-size: 15px;
+}
+
+.register a{
+    color:  rgb(73, 167, 255);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.download{
+    float: left;
+    width: 100%;
+    height: 80px;
+    margin-left: 1%;
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+    padding-top: 30px;
+}
+
+.download button{
+    outline: none;
+    border: none;
+    padding: none;
+    background-color: transparent;
+}

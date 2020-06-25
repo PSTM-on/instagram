@@ -1,0 +1,38 @@
+.access{
+    padding: 10%;
+}
+
+.title{
+    font-size: 23px;
+}
+
+ul {
+    border: none;
+    border-bottom: 0.5px solid rgb(199, 199, 199);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: rgb(36, 36, 36);
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+}
+
+.tab1, .tab2{
+    width: 50%;
+    text-align: center;
+}
+
+.tab1 a, .tab2 a{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navout{
+    margin-top: 30px;
+    font-size: 15px;
+}

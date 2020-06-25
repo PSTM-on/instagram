@@ -1,0 +1,45 @@
+.contact{
+    padding: 10%;
+}
+
+.title{
+    font-size: 23px;
+}
+
+.smalltitle{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.text{
+    font-size: 15px;
+}
+
+button{
+    font-size: 14px;
+    width: 100px;
+    height: 35px;
+}
+
+#delete{
+    background-color: transparent;
+    color: rgb(24, 103, 250);
+    width: 100px;
+    float: right;
+    border: none;
+}
+
+.blank{
+    width: 100%;
+    height: 30px;
+}
+
+.smallblank{
+    width: 100%;
+    height: 15px;
+}
+
+.smallestblank{
+    width: 100%;
+    height: 2px;
+}

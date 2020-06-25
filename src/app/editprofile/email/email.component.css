@@ -1,0 +1,16 @@
+.email{
+    padding: 10%;
+}
+
+.title{
+    font-size: 23px;
+}
+
+input{
+    margin-right: 10px;
+}
+
+.form-text, .text-muted{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}

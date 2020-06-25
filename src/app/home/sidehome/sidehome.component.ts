@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import { UserModel } from '../../models/user';
-import { ProfileModel } from '../../models/profile';
-
-import { InstaService } from '../../services/insta.service';
+import { FriendinfoService } from '../../services/friendinfo.service';
+import { MyinfoService } from '../../services/myinfo.service';
+import { UserupdateService } from '../../services/userupdate.service';
 
 @Component({
   selector: 'app-sidehome',
@@ -14,34 +15,58 @@ import { InstaService } from '../../services/insta.service';
 
 export class SidehomeComponent implements OnInit {
 
-  users: UserModel;
-  profiles1: ProfileModel;
-  profiles2: ProfileModel;
+  myinfo: UserModel;
+  friendinfo: UserModel;
+  closeResult: string;
 
   constructor(
-    private instaService: InstaService
-  ) {
-
-  }
+    private friendinfoService: FriendinfoService,
+    private myinfoService: MyinfoService,
+    private userupdateService: UserupdateService,
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit() {
-    this.getProfiles1();
-    this.getProfiles2();
-    this.getUsers();
+    this.getMyinfo();
+    this.getFriendinfo();
   }
 
-  getProfiles1() {
-    this.instaService.getProfiles1()
-      .subscribe((profiles1) => this.profiles1 = profiles1);
+  getFriendinfo() {
+    this.friendinfoService.getFriendinfo()
+      .subscribe(friendinfo => this.friendinfo = friendinfo);
   }
 
-  getProfiles2() {
-    this.instaService.getProfiles2()
-      .subscribe((profiles2) => this.profiles2 = profiles2);
+  getMyinfo() {
+    this.myinfoService.getMyinfo()
+      .subscribe(myinfo => this.myinfo = myinfo);
   }
 
-  getUsers() {
-    this.instaService.getUsers()
-      .subscribe(users => this.users = users);
+  open(content) {
+    this.modalService.open(content, {size: 'sm'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  followchange(i){
+    this.friendinfo[i].following = !this.friendinfo[i].following;
+    this.userupdateService.userUpdate(i, this.friendinfo[i].following);
+    this.getFriendinfo();
+    this.modalService.dismissAll();
+  }
+
+  friendpage(i){
+    this.userupdateService.getNum(i);
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }

@@ -1,0 +1,17 @@
+<div class="pastcomment" *ngIf=friendinfo>
+  <span class="name">{{friendinfo[0].name}} </span>
+  <span class="commentcontent">{{friendinfo[0].comment}}</span><br/>
+  <span class="name">{{friendinfo[1].name}} </span>
+  <span class="commentcontent">{{friendinfo[1].comment}}</span><br/>
+  
+  <div *ngFor='let item of comments; let i = index'>
+    <span class="name" *ngIf=myinfo>{{myinfo.username}} </span>
+    <span class="commentcontent">{{comments[i]}}</span></div><br/>
+</div>
+
+<div class="makecomment">
+  <input placeholder='댓글 달기...' #comment />
+  <button (click)="addComment(comment)">
+    게시
+  </button>
+</div>

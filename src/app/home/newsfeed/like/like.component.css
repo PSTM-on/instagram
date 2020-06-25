@@ -1,0 +1,29 @@
+.heart{
+    margin: 0 0 0 10px;
+    display: block;
+}
+
+.solid{
+    animation-name: bigger;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+}
+
+.empty{
+    animation-name: bigger;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+}
+
+
+@keyframes bigger{
+    from{
+        transform: scale(1.0, 1.0);
+    }
+    50%{
+        transform: scale(1.1, 1.1);
+    }
+    to{
+        transform: scale(1.0, 1.0);
+    }
+}

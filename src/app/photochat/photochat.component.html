@@ -1,0 +1,45 @@
+<app-header></app-header>
+<ng-template #showphoto>
+
+    <div class="photoframe">
+
+      <img class="postimage" [src]="postdata[i]" />
+
+      <div class="textarea">
+        <img class="profilepicture" [src]="myinfo.avatar" />
+        <span class="username">{{myinfo.username}}</span>
+        <hr />
+        <img class="profilepicture" [src]="myinfo.avatar" />
+        <span class="username">{{myinfo.username}}</span>
+        <span class="writing"> {{myinfo.post}}</span>
+        <br />
+        <img class="profilepicture" [src]="friendinfo[i].avatar" />
+        <span class="username">{{friendinfo[i].username}}</span>
+        <span class="writing"> {{friendinfo[i].comment}}</span>
+        <hr />
+        <div (click)="like = !like">
+          <img class="empty" *ngIf="like" [src]="heartempty" />
+          <img class="solid" *ngIf="!like" [src]="heartsolid" />
+        </div>
+
+        <div class="showcomment">           
+          <div *ngFor='let item of comments; let i = index'>
+            <span class="name">{{myinfo.username}} </span>
+            <span class="commentcontent">{{comments[i]}}</span></div><br/>
+        </div>
+        
+        <div class="makecomment">
+          <input placeholder='댓글 달기...' #comment />
+          <button (click)="addComment(comment)">
+            게시
+          </button>
+        </div>
+        
+      </div>
+
+    </div>
+
+  </ng-template>
+
+</div>
+</div>

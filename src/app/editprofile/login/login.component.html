@@ -1,0 +1,54 @@
+<div class="email">
+  <p class="title">로그인 활동</p>
+  <p class="smalltitle">회원님이 맞나요?</p>
+
+  <div class="mapview1">
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+    <div class="click1"><span>예</span></div>
+    <div class="click2"><span>아니오</span></div>
+  </div>
+
+  <br />
+  <p class="smalltitle">로그인한 위치</p>
+
+  <p>
+    <button type="button" class="citybtn" (click)="isCollapsedA = !isCollapsedA"
+      [attr.aria-expanded]="!isCollapsedA" aria-controls="collapse1">
+      <img [src]="markIcon"/>  City<img class="arrow" [src]="arrowIcon" />
+    </button>
+  </p>
+  <div id="collapse1" [ngbCollapse]="isCollapsedA">
+    <div class="card">
+      <div class="card-body">
+        <div class="mapview2">
+          <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+          <div class="click1"><span>로그아웃</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br/><p>
+    <button type="button" class="citybtn" (click)="isCollapsedB = !isCollapsedB"
+      [attr.aria-expanded]="!isCollapsedB" aria-controls="collapse2">
+      <img [src]="markIcon"/>  City<img class="arrow" [src]="arrowIcon" />
+    </button>
+  </p>
+  <div id="collapse2" [ngbCollapse]="isCollapsedB">
+    <div class="card">
+      <div class="card-body">
+        <div class="mapview2">
+          <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+          <div class="click1"><span>로그아웃</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
