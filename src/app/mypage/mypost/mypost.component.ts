@@ -13,15 +13,22 @@ import { MyinfoService } from '../../services/myinfo.service';
 })
 export class MypostComponent implements OnInit {
 
-  postdata: Array<string> = [];
+  postdata: string[] = [];
   closeResult: string;
-  friendinfo: UserModel;
+  friendinfo: UserModel[] = [];
   myinfo: UserModel;
-  comments: Array<CommentInputModel> = [];
+  comments: CommentInputModel[] = [];
 
-  like = true;
-  heartempty = '../../../../assets/heart-empty.svg';
-  heartsolid = '../../../../assets/heart-solid.svg';
+  mark = true;
+  chat = '../../../assets/chat.svg';
+  share = '../../../assets/share.svg';
+  faIcon = '../../../assets/fa_icon.PNG';
+  meIcon = '../../../assets/me_icon.PNG';
+  twIcon = '../../../assets/tw_icon.PNG';
+  emIcon = '../../../assets/em_icon.PNG';
+  liIcon = '../../../assets/li_icon.PNG';
+  bookmarkEmpty = '../../../assets/bookmark-empty.svg';
+  bookmarkSolid = '../../../assets/bookmark-solid.svg';
 
   constructor(
     private modalService: NgbModal,
@@ -39,6 +46,21 @@ export class MypostComponent implements OnInit {
     for (let i = 0; i < 10; i++) {
       this.postdata.push(`http://placeimg.com/300/300/arch/${i}`);
     }
+  }
+
+  getMyinfo() {
+    this.myinfoService.getMyinfo()
+      .subscribe(myinfo => this.myinfo = myinfo);
+  }
+
+  getFriendinfo() {
+    this.friendinfoService.getFriendinfo()
+      .subscribe(friendinfo => this.friendinfo = friendinfo);
+  }
+
+  addComment(comment: any): void {
+    this.comments.push(comment.value);
+    comment.value = '';
   }
 
   open(content) {
@@ -63,21 +85,5 @@ export class MypostComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-
-  getMyinfo() {
-    this.myinfoService.getMyinfo()
-      .subscribe(myinfo => this.myinfo = myinfo);
-  }
-
-  getFriendinfo() {
-    this.friendinfoService.getFriendinfo()
-      .subscribe(friendinfo => this.friendinfo = friendinfo);
-  }
-
-  addComment(comment: any): void {
-    this.comments.push(comment.value);
-    comment.value = '';
-  }
-
 }
 

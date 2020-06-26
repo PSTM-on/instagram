@@ -72,28 +72,84 @@
     font-size: 14px;
 }
 
-.solid{
-    animation-name: bigger;
-    animation-duration: 0.3s;
-    animation-timing-function: ease;
+.icons{
+    width: 100%;
+    height: 40px;
 }
 
-.empty{
-    animation-name: bigger;
-    animation-duration: 0.3s;
-    animation-timing-function: ease;
+app-like{
+    display: block;
+    width: 42px;
+    height: 32px;
+    float: left;
+}
+.chat{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    float: left;
+    margin-left: 10px;
 }
 
-@keyframes bigger{
-    from{
-        transform: scale(1.0, 1.0);
-    }
-    50%{
-        transform: scale(1.1, 1.1);
-    }
-    to{
-        transform: scale(1.0, 1.0);
-    }
+.share{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    float: left;
+    margin-left: 5px;
+}
+
+.bookmark{
+    margin: 0 10px 0 0;
+    display: block;
+    float: right;
+}
+
+.sharemodal .close{
+    outline: none;
+}
+
+.sharemodal .modal-header{
+    text-align: center;
+}
+
+.sharemodal .modal-header span{
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.sharemodal .modal-body{
+    padding: 10px 0;
+}
+
+.sharemodal .modal-body button{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.sharemodal .modal-footer{
+    padding: 10px 0;
+}
+
+.sharemodal .cancelbtn{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 45px;
 }
 
 .name{

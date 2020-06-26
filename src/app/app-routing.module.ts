@@ -21,35 +21,45 @@ import { PrivacyComponent } from './editprofile/privacy/privacy.component';
 import { LoginComponent } from './editprofile/login/login.component';
 import { InstaemailComponent } from './editprofile/instaemail/instaemail.component';
 import { PhotochatComponent } from './photochat/photochat.component';
+import { SeeAllComponent } from './explore/see-all/see-all.component';
+import { ExploreTabComponent } from './explore/explore-tab/explore-tab.component';
 
 const routes: Routes = [
 
   {path: '', component: HomeComponent},
   {path: 'photo', component: PhotochatComponent},
-  {path: 'explore', component: ExploreComponent, canActivate: [AuthGuard]},
 
   {
-    path: ':username', component: MypageComponent, canActivate: [AuthGuard],
+    path: 'explore', component: ExploreComponent, canActivate: [AuthGuard],
     children: [
-    {path: '', component: MypostComponent},
-    {path: 'channel', component: IgtvComponent},
-    {path: 'saved', component: SavedComponent},
-    {path: 'tagged', component: TaggedComponent},
+      {path: '', component: ExploreTabComponent},
+      {path: 'people/suggested', component: SeeAllComponent},
   ]},
 
   {
     path: 'accounts', component: EditprofileComponent, canActivate: [AuthGuard],
     children: [
-    {path: 'edit', component: EditComponent},
-    {path: 'password/change', component: PasswordComponent},
-    {path: 'manage_access', component: AccessComponent},
-    {path: 'emails/settings', component: EmailComponent},
-    {path: 'push/web/settings', component: PushComponent},
-    {path: 'contact_history', component: ContactComponent},
-    {path: 'privacy_and_security', component: PrivacyComponent},
-    {path: 'session/login_activity', component: LoginComponent},
-    {path: 'emails/emails_sent', component: InstaemailComponent},
+      {path: 'edit', component: EditComponent},
+      {path: 'password/change', component: PasswordComponent},
+      {path: 'manage_access', component: AccessComponent},
+      {path: 'emails/settings', component: EmailComponent},
+      {path: 'push/web/settings', component: PushComponent},
+      {path: 'contact_history', component: ContactComponent},
+      {path: 'privacy_and_security', component: PrivacyComponent},
+      {path: 'session/login_activity', component: LoginComponent},
+      {path: 'emails/emails_sent', component: InstaemailComponent},
   ]},
+
+  {
+    path: ':username', component: MypageComponent, canActivate: [AuthGuard],
+    children: [
+      {path: '', component: MypostComponent},
+      {path: 'channel', component: IgtvComponent},
+      {path: 'saved', component: SavedComponent},
+      {path: 'tagged', component: TaggedComponent},
+  ]},
+
+
 ];
 
 @NgModule({

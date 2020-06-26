@@ -1,0 +1,90 @@
+p{
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(148, 148, 148);
+}
+
+.explore{
+    background-color: rgba(217, 217, 217, 0.2);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.accounts{
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.explore-image1{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: column column;
+}
+
+.explore-image1 .img_wrapper1-1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.explore-image1 .img_wrapper1-2{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.explore-image1 .img_wrapper1-3{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.img_wrapper1-1 img,
+.img_wrapper1-3 img{
+    margin: 2%;
+    width: 96%;
+    height: 96%;
+}
+
+.img_wrapper1-2 img{
+    margin: 1%;
+    width: 99%;
+    height: 99%;
+}
+
+.explore-image2{
+    position: relative;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.explore-image2 .img_wrapper2{
+    display: block;
+    float: left;
+    margin: 0;
+    width: 33.333%;
+    height: 33.333%;
+}
+
+.explore-image2 .img_wrapper2 img{
+    margin: 2%;
+    width: 96%;
+    height: 96%;
+}

@@ -12,8 +12,8 @@ import { CommentInputModel } from '../../../models/comment';
 })
 export class CommentComponent implements OnInit {
 
-  comments: Array<CommentInputModel> = [];
-  friendinfo: UserModel;
+  comments: CommentInputModel[] = [];
+  friendinfo: UserModel[] = [];
   myinfo: UserModel;
 
   constructor(

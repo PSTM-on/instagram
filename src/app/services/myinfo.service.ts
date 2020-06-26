@@ -10,7 +10,7 @@ import { UserModel } from '../models/user';
 export class MyinfoService {
 
   myinfo: UserModel;
-  loginUser = null;
+  loginUser: number = null;
 
   constructor(
     private allusersService: AllusersService,
@@ -19,7 +19,7 @@ export class MyinfoService {
   setMyinfo() {
     this.myinfo = this.allusersService.allusers[this.loginUser];
     localStorage.setItem('myinfo', JSON.stringify(this.myinfo));
-    localStorage.setItem('loginuser', this.loginUser);
+    localStorage.setItem('loginuser', this.loginUser.toString());
   }
 
   getMyinfo(): Observable < UserModel > {
@@ -31,4 +31,5 @@ export class MyinfoService {
     // this.loginUser = Number(localStorage.getItem('loginuser'));
     return of(this.loginUser);
   }
+
 }

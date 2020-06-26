@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
-import {
-   debounceTime, distinctUntilChanged, switchMap
- } from 'rxjs/operators';
-
-import { AllusersService } from '../../services/allusers.service';
 import { UserModel } from '../../models/user';
+import { FriendinfoService } from '../../services/friendinfo.service';
 
 @Component({
   selector: 'app-header-search',
@@ -15,28 +12,35 @@ import { UserModel } from '../../models/user';
 })
 export class HeaderSearchComponent implements OnInit {
 
-  searchIcon: '../../assets/search.PNG';
-  users$: Observable<UserModel[]>;
-  private searchTerms = new Subject<string>();
+  friendinfo: UserModel[];
+  friendinfo$: Observable<UserModel[]>;
 
-  constructor(private allusersService: AllusersService) {}
+  searchIcon: '../../../assets/search.PNG';
+
+  private searchTerms = new Subject<string>();
+  public term: any;
+
+  constructor(
+    private friendinfoService: FriendinfoService
+  ) {}
+
+  ngOnInit() {
+    this.getFriendinfo();
+    this.friendinfo$ = this.searchTerms.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap((term: string) => this.friendinfoService.searchFriend(term)),
+    );
+  }
+
+  getFriendinfo() {
+    this.friendinfoService.getFriendinfo()
+      .subscribe(friendinfo => this.friendinfo = friendinfo);
+  }
 
   // Push a search term into the observable stream.
   search(term: string): void {
     this.searchTerms.next(term);
-  }
-
-  ngOnInit(): void {
-    this.users$ = this.searchTerms.pipe(
-      // wait 300ms after each keystroke before considering the term
-      debounceTime(300),
-
-      // ignore new term if same as previous term
-      distinctUntilChanged(),
-
-      // switch to new search observable each time the term changes
-      switchMap((term: string) => this.allusersService.searchHeroes(term)),
-    );
   }
 
 }

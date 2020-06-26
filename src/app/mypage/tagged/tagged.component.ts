@@ -13,11 +13,11 @@ import { MyinfoService } from '../../services/myinfo.service';
 })
 export class TaggedComponent implements OnInit {
 
-  tagdata: Array<string> = [];
+  tagdata: string[] = [];
   closeResult: string;
   myinfo: UserModel;
-  friendinfo: UserModel;
-  comments: Array<CommentInputModel> = [];
+  friendinfo: UserModel[] = [];
+  comments: CommentInputModel[] = [];
 
   like = true;
   heartempty = '../../../../assets/heart-empty.svg';

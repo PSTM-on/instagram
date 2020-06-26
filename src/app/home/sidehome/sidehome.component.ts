@@ -16,7 +16,7 @@ import { UserupdateService } from '../../services/userupdate.service';
 export class SidehomeComponent implements OnInit {
 
   myinfo: UserModel;
-  friendinfo: UserModel;
+  friendinfo: UserModel[];
   closeResult: string;
 
   constructor(
@@ -41,14 +41,6 @@ export class SidehomeComponent implements OnInit {
       .subscribe(myinfo => this.myinfo = myinfo);
   }
 
-  open(content) {
-    this.modalService.open(content, {size: 'sm'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
   followchange(i){
     this.friendinfo[i].following = !this.friendinfo[i].following;
     this.userupdateService.userUpdate(i, this.friendinfo[i].following);
@@ -58,6 +50,14 @@ export class SidehomeComponent implements OnInit {
 
   friendpage(i){
     this.userupdateService.getNum(i);
+  }
+
+  open(content) {
+    this.modalService.open(content, {size: 'sm'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
 
   private getDismissReason(reason: any): string {

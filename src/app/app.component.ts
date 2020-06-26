@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AllusersService } from './services/allusers.service';
 
 declare var $: any;
 
@@ -9,6 +10,10 @@ declare var $: any;
 })
 export class AppComponent {
 
-  constructor(){}
+  constructor(
+    private allUserService: AllusersService
+  ){
+    this.allUserService.initiateUsers();
+  }
 
 }

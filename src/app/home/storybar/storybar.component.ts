@@ -13,6 +13,8 @@ import { FriendinfoService } from '../../services/friendinfo.service';
 })
 export class StorybarsComponent implements OnInit {
 
+  friendinfo: UserModel[];
+
   customOptions: OwlOptions = {
     loop: true,
     nav: true,
@@ -21,8 +23,6 @@ export class StorybarsComponent implements OnInit {
     responsive: {
       0: { items: 7 }, 400: { items: 8}, 740: { items: 8 }, 940: { items: 9 } },
   };
-
-  friendinfo: UserModel;
 
   constructor(
     private friendinfoService: FriendinfoService

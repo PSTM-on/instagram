@@ -24,7 +24,11 @@
     grid-row-end: 3;
 }
 
-
+.writerpicture button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
 .writerpicture img{
     width: 40px;
     height: 40px;
@@ -37,6 +41,11 @@
     margin-left: 10px;
     font-size: 14px;
     font-weight: bold;
+}
+
+.writerid a{
+    text-decoration: none;
+    color: black;
 }
 
 .writerlocation{
@@ -80,6 +89,59 @@ app-like{
     background-color: transparent;
     float: left;
     margin-left: 5px;
+}
+
+.bookmark{
+    margin: 0 10px 0 0;
+    display: block;
+    float: right;
+}
+
+.sharemodal .close{
+    outline: none;
+}
+
+.sharemodal .modal-header{
+    text-align: center;
+}
+
+.sharemodal .modal-header span{
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.sharemodal .modal-body{
+    padding: 10px 0;
+}
+
+.sharemodal .modal-body button{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.sharemodal .modal-footer{
+    padding: 10px 0;
+}
+
+.sharemodal .cancelbtn{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 45px;
 }
 
 .postwriting{

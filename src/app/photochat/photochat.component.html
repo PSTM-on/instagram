@@ -1,45 +1,75 @@
 <app-header></app-header>
-<ng-template #showphoto>
 
-    <div class="photoframe">
+<div class="photochat">
 
-      <img class="postimage" [src]="postdata[i]" />
-
-      <div class="textarea">
-        <img class="profilepicture" [src]="myinfo.avatar" />
-        <span class="username">{{myinfo.username}}</span>
-        <hr />
-        <img class="profilepicture" [src]="myinfo.avatar" />
-        <span class="username">{{myinfo.username}}</span>
-        <span class="writing"> {{myinfo.post}}</span>
-        <br />
-        <img class="profilepicture" [src]="friendinfo[i].avatar" />
-        <span class="username">{{friendinfo[i].username}}</span>
-        <span class="writing"> {{friendinfo[i].comment}}</span>
-        <hr />
-        <div (click)="like = !like">
-          <img class="empty" *ngIf="like" [src]="heartempty" />
-          <img class="solid" *ngIf="!like" [src]="heartsolid" />
+  <div class="photoframe">
+    <img class="postimage" [src]="friendinfo[photoIndex].postimage" />
+    <div class="textarea">
+      <img class="profilepicture" [src]="friendinfo[photoIndex].avatar" />
+      <span class="username">{{friendinfo[photoIndex].username}}</span>
+      <hr />
+      <img class="profilepicture" [src]="friendinfo[photoIndex].avatar" />
+      <span class="username">{{friendinfo[photoIndex].username}}</span>
+      <span class="writing"> {{friendinfo[photoIndex].post}}</span>
+      <br />
+      <img class="profilepicture" [src]="friendinfo[8-photoIndex].avatar" />
+      <span class="username">{{friendinfo[8-photoIndex].username}}</span>
+      <span class="writing"> {{friendinfo[8-photoIndex].comment}}</span>
+      <hr />
+      <div class="icons">
+        <app-like></app-like>
+        <button class="chat"><img [src]="chat"></button>
+        <button class="share" (click)="open(sharemodal)"><img [src]="share"></button>
+        <div class="bookmark" (click)="mark = !mark">
+          <img class="empty" *ngIf="mark" [src]="bookmarkEmpty"/>
+          <img class="solid" *ngIf="!mark" [src]="bookmarkSolid"/>
         </div>
-
-        <div class="showcomment">           
-          <div *ngFor='let item of comments; let i = index'>
-            <span class="name">{{myinfo.username}} </span>
-            <span class="commentcontent">{{comments[i]}}</span></div><br/>
-        </div>
-        
-        <div class="makecomment">
-          <input placeholder='댓글 달기...' #comment />
-          <button (click)="addComment(comment)">
-            게시
-          </button>
-        </div>
-        
       </div>
 
+      <div class="showcomment">
+        <div *ngFor='let item of comments; let i = index'>
+          <span class="name">{{myinfo.username}} </span>
+          <span class="commentcontent">{{comments[i]}}</span></div><br/>
+      </div>
+
+      <div class="makecomment">
+        <input placeholder='댓글 달기...' #comment />
+        <button (click)="addComment(comment)">
+          게시
+        </button>
+      </div>
     </div>
+  </div>
 
-  </ng-template>
+  <br/><hr /><br/>
+  <span class="username">{{friendinfo[photoIndex].username}}</span>
+  <span class="viewmore">님의 게시물 더 보기</span><br/><br/>
+  <div class="morephoto" *ngFor="let item of postdata, index as i">
+    <div class="myimage">
+      <button class="imagebtn"><img [src]="postdata[i]"></button>
+    </div>
+  </div>
 
 </div>
+
+<ng-template #sharemodal let-modal class="modal-sm modal-dialog modal-dialog-centered" role="document">
+  <div class="sharemodal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span>공유</span>
+        <button type="button" class="close" data-dismiss="modal" (click)="modal.dismiss()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <button><img [src]="faIcon"/>  Facebook에 공유</button>
+        <button><img [src]="meIcon"/>  Messenger에 공유</button>
+        <button><img [src]="twIcon"/>  Twitter에 공유</button>
+        <button><img [src]="emIcon"/>  이메일로 공유</button>
+        <button><img [src]="liIcon"/>  링크 복사</button>
+        <button type="button" class="cancelbtn" data-dismiss="modal" (click)="modal.dismiss()">취소</button>
+      </div>
+    </div>
 </div>
+</ng-template>

@@ -18,6 +18,9 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+app-header{
+  z-index: 999;
+}
 
 /* owl-carousel component css */
 
@@ -130,7 +133,7 @@ body {
 
 /* bootstrap tab component css */
 
-ul {
+ul .nav-pills {
   border-top: 0.5px solid rgb(199, 199, 199);
 }
 

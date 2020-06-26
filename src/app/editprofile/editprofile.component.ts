@@ -7,12 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditprofileComponent implements OnInit {
 
-  closeResult: string;
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
 
 }

@@ -1,0 +1,189 @@
+.photochat{
+    background-color: rgba(217, 217, 217, 0.2);
+    margin: 0;
+    padding: 50px 15%;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.photoframe{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    height: 55vh;
+    text-align: left;
+    border-radius: 2px;
+    border: 1px solid rgb(206, 206, 206);
+}
+
+.postimage {
+    width: 100%;
+    height: 100%;
+}
+
+.textarea{
+    padding: 20px;
+    background-color: white;
+}
+
+.profilepicture{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.username{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.writing{
+    font-size: 14px;
+}
+
+.icons{
+    width: 100%;
+    height: 40px;
+}
+
+app-like{
+    display: block;
+    width: 42px;
+    height: 32px;
+    float: left;
+}
+
+.chat{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    float: left;
+    margin-left: 10px;
+}
+
+.share{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    float: left;
+    margin-left: 5px;
+}
+
+.bookmark{
+    margin: 0 10px 0 0;
+    display: block;
+    float: right;
+}
+
+.sharemodal .close{
+    outline: none;
+}
+
+.sharemodal .modal-header{
+    text-align: center;
+}
+
+.sharemodal .modal-header span{
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.sharemodal .modal-body{
+    padding: 10px 0;
+}
+
+.sharemodal .modal-body button{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.sharemodal .modal-footer{
+    padding: 10px 0;
+}
+
+.sharemodal .cancelbtn{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 45px;
+}
+
+.name{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.commentcontent{
+    font-size: 13px;
+}
+
+.makecomment{
+    border-top: 1px solid rgb(207, 207, 207);
+}
+
+.makecomment input{
+    width: 90%;
+    height: 50px;
+    font-size: 13px;
+    border: none;
+    outline: none;
+}
+
+.makecomment button{
+    float: right;
+    margin-top: 20px;
+    padding: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(59, 114, 235);
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+}
+
+.viewmore{
+    color: rgb(180, 180, 180);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.morephoto{
+    width: 100%;
+}
+
+.morephoto .myimage{
+    display: block;
+    float: left;
+    margin: 0;
+    width: 33.33%;
+    height: 33.33%;
+}
+
+.morephoto .myimage img{
+    margin: 1%;
+    width: 98%;
+    height: 98%;
+}
+
+.imagebtn{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}

@@ -1,8 +1,10 @@
 <div class="feedzone" *ngFor="let user of friendinfo; index as i">
 
   <div class="writerinfo" *ngIf=friendinfo>
-    <div class="writerpicture"><img [src]='friendinfo[i].avatar'></div>
-    <div class="writerid"><span>{{friendinfo[i].username}}</span></div>
+    <div class="writerpicture"><button>
+      <a routerLink="/{{friendinfo[i].username}}">
+      <img [src]='friendinfo[i].avatar' /></a></button></div>
+    <div class="writerid"><a routerLink="/{{friendinfo[i].username}}">{{friendinfo[i].username}}</a></div>
     <div class="writerlocation"><span>{{friendinfo[i].city}}</span></div>
   </div>
 
@@ -11,8 +13,12 @@
 
   <div class="icons">
     <app-like></app-like>
-    <button class="chat" (click)="photoIndex(i)"><a routerLink="/photo"><img [src]="chat"></a></button>
-    <button class="share"><img [src]="share"></button>
+    <button class="chat"><a routerLink="/photo" (click)="photoIndex(i)"><img [src]="chat"></a></button>
+    <button class="share" (click)="open(sharemodal)"><img [src]="share"></button>
+    <div class="bookmark" (click)="mark = !mark">
+      <img class="empty" *ngIf="mark" [src]="bookmarkEmpty"/>
+      <img class="solid" *ngIf="!mark" [src]="bookmarkSolid"/>
+    </div>
   </div>
 
   <div class="postwriting" *ngIf=friendinfo>
@@ -23,3 +29,25 @@
   <app-comment></app-comment>
 
 </div>
+
+<ng-template #sharemodal let-modal class="modal-dialog modal-dialog-centered" role="document">
+  <div class="sharemodal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span>공유</span>
+        <button type="button" class="close" data-dismiss="modal" (click)="modal.dismiss()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <button><img [src]="faIcon"/>  Facebook에 공유</button>
+        <button><img [src]="meIcon"/>  Messenger에 공유</button>
+        <button><img [src]="twIcon"/>  Twitter에 공유</button>
+        <button><img [src]="emIcon"/>  이메일로 공유</button>
+        <button><img [src]="liIcon"/>  링크 복사</button>
+        <button type="button" class="cancelbtn" data-dismiss="modal" (click)="modal.dismiss()">취소</button>
+      </div>
+    </div>
+</div>
+</ng-template>

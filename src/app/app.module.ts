@@ -29,6 +29,7 @@ import { CommentComponent } from './home/newsfeed/comment/comment.component';
 import { LikeComponent } from './home/newsfeed/like/like.component';
 import { AccountCardComponent } from './explore/account-card/account-card.component';
 import { UserslicePipe } from './pipe/userslice.pipe';
+import { SearchPipe } from './pipe/search.pipe';
 import { MypageComponent } from './mypage/mypage.component';
 import { MypostComponent } from './mypage/mypost/mypost.component';
 import { MypageFooterComponent } from './mypage/mypage-footer/mypage-footer.component';
@@ -46,6 +47,8 @@ import { PrivacyComponent } from './editprofile/privacy/privacy.component';
 import { LoginComponent } from './editprofile/login/login.component';
 import { InstaemailComponent } from './editprofile/instaemail/instaemail.component';
 import { PhotochatComponent } from './photochat/photochat.component';
+import { SeeAllComponent } from './explore/see-all/see-all.component';
+import { ExploreTabComponent } from './explore/explore-tab/explore-tab.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,7 @@ import { PhotochatComponent } from './photochat/photochat.component';
     LikeComponent,
     AccountCardComponent,
     UserslicePipe,
+    SearchPipe,
     MypageComponent,
     MypostComponent,
     MypageFooterComponent,
@@ -79,6 +83,8 @@ import { PhotochatComponent } from './photochat/photochat.component';
     LoginComponent,
     InstaemailComponent,
     PhotochatComponent,
+    SeeAllComponent,
+    ExploreTabComponent,
   ],
   imports: [
     BrowserModule,

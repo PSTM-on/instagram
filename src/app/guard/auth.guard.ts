@@ -3,6 +3,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { Observable } from 'rxjs';
 import { MyinfoService } from '../services/myinfo.service';
 import { UserModel } from '../models/user';
+import { FriendinfoService } from '../services/friendinfo.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +14,28 @@ export class AuthGuard implements CanActivate {
 
   constructor(
     private router: Router,
-    private myinfoService: MyinfoService
+    private myinfoService: MyinfoService,
+    private friendService: FriendinfoService
   ) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      this.myinfoService.getMyinfo().subscribe(myinfo => this.myinfo = myinfo);
-      if (this.myinfo.id){
+    if (this.myinfoService.myinfo) {
+      return true;
+    } else {
+
+      const account = localStorage.getItem('myinfo');
+      if (account) {
+        this.myinfoService.myinfo = JSON.parse(account);
+        this.myinfoService.loginUser = Number(this.myinfoService.myinfo.id) - 1;
+        this.friendService.setFriendinfo();
         return true;
       }
+
       this.router.navigate(['']);
       return false;
     }
+
   }
+}

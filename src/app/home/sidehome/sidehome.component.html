@@ -1,18 +1,24 @@
-<div class="myprofile" *ngIf=myinfo><img [src]='myinfo.avatar' /></div>
+<div class="myprofile" *ngIf=myinfo>
+  <button><a routerLink="/{{myinfo.username}}">
+      <img [src]='myinfo.avatar' /></a></button>
+</div>
 <div class="myinfo" *ngIf=myinfo>
-  <span class="myid">{{myinfo.username}}<br></span>
+  <a class="myid" routerLink="/{{myinfo.username}}">{{myinfo.username}}<br></a>
   <span class="myname">{{myinfo.name}}</span>
 </div>
 
 <div class="recommandtitle">
   <span class="rctitle">회원님을 위한 추천</span>
-  <span class="rcall">모두보기</span>
+  <a class="rcall" routerLink="/explore/people/suggested">모두보기</a>
 </div>
 
 <div class="recommand" *ngFor="let user of friendinfo | userslice:0:5; index as i; ">
-  <div class="rcprofile" *ngIf="friendinfo"><img [src]='friendinfo[i].avatar' /></div>
+  <div class="rcprofile" *ngIf="friendinfo">
+    <button><a routerLink="/{{friendinfo[i].username}}">
+        <img [src]='friendinfo[i].avatar' /></a></button></div>
   <div class="rcinfo" *ngIf="friendinfo">
-    <a class="rcid" routerLink="/{{friendinfo[i].username}}" (click)="friendpage(i)">{{friendinfo[i].username}}</a><br/>
+    <a class="rcid" routerLink="/{{friendinfo[i].username}}"
+      (click)="friendpage(i)">{{friendinfo[i].username}}</a><br />
     <span class="rcstatus">회원님을 팔로우합니다</span>
   </div>
   <button *ngIf="!friendinfo[i].following" class="rcfollow" (click)="followchange(i)">팔로우</button>

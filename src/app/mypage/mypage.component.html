@@ -25,7 +25,7 @@
     <div class="mypost">
       <ul ngbNav #nav="ngbNav" class="nav-pills">
 
-        <li ngbNavItem class="lefttab">
+        <li ngbNavItem class="tab">
           <a ngbNavLink routerLink="/{{userInfo.username}}">게시물</a>
           <ng-template ngbNavContent>
             <app-mypost></app-mypost>
@@ -46,7 +46,7 @@
           </ng-template>
         </li>
 
-        <li ngbNavItem class="righttab">
+        <li ngbNavItem class="tab">
           <a ngbNavLink routerLink="/{{userInfo.username}}/tagged">태그됨</a>
           <ng-template ngbNavContent>
             <app-tagged></app-tagged>
@@ -75,7 +75,7 @@
           <button routerLink="/accounts/session/login_activity" (click)="modal.dismiss()">로그인 활동</button><hr />
           <button routerLink="/emails/emails_sent" (click)="modal.dismiss()">Instagram에서 보낸 이메일</button><hr />
           <button (click)="modal.dismiss(); open(reportmodal);">문제 신고</button><hr />
-          <button>로그아웃</button>
+          <button (click)="modal.dismiss(); logOut()">로그아웃</button>
         </div>
 
         <div class="modal-footer">

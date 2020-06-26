@@ -24,9 +24,14 @@
           <span class="username">{{friendinfo[i].username}}</span>
           <span class="writing"> {{friendinfo[i].comment}}</span>
           <hr />
-          <div (click)="like = !like">
-            <img class="empty" *ngIf="like" [src]="heartempty" />
-            <img class="solid" *ngIf="!like" [src]="heartsolid" />
+          <div class="icons">
+            <app-like></app-like>
+            <button class="chat"><img [src]="chat"></button>
+            <button class="share" (click)="open(sharemodal)"><img [src]="share"></button>
+            <div class="bookmark" (click)="mark = !mark">
+              <img class="empty" *ngIf="mark" [src]="bookmarkEmpty"/>
+              <img class="solid" *ngIf="!mark" [src]="bookmarkSolid"/>
+            </div>
           </div>
 
           <div class="showcomment">           
@@ -50,3 +55,25 @@
 
   </div>
 </div>
+
+<ng-template #sharemodal let-modal class="modal-dialog modal-dialog-centered modal-sm" role="document">
+  <div class="sharemodal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span>공유</span>
+        <button type="button" class="close" data-dismiss="modal" (click)="modal.dismiss()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <button><img [src]="faIcon"/>  Facebook에 공유</button>
+        <button><img [src]="meIcon"/>  Messenger에 공유</button>
+        <button><img [src]="twIcon"/>  Twitter에 공유</button>
+        <button><img [src]="emIcon"/>  이메일로 공유</button>
+        <button><img [src]="liIcon"/>  링크 복사</button>
+        <button type="button" class="cancelbtn" data-dismiss="modal" (click)="modal.dismiss()">취소</button>
+      </div>
+    </div>
+</div>
+</ng-template>

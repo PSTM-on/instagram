@@ -1,13 +1,22 @@
-<div id="search-component">
-    <i class="fas fa-search"></i>
-    <input #searchBox id="search-box" (input)="search(searchBox.value)"
-    placeholder="검색"/>
-  
-    <!-- <ul class="search-result">
-      <li *ngFor="let hero of heroes$ | async" >
-        <a routerLink="/detail/{{hero.id}}">
-          {{hero.name}}
-        </a>
+<div class="search-component">
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="검색" />
+  <!-- <input #searchBox id="search-box" [(ngModel)]="searchterm" placeholder="검색" /> -->
+
+  <div class="search-result">
+    <ul class="search-list">
+      <li *ngFor="let user of friendinfo$ | async; index as i">
+        <button><a routerLink="/{{user.username}}">
+            <div class="search-item">
+              <img class="profileimage" [src]="user.avatar" />
+              <div class="search-right">
+                <p class="username">{{user.username}}</p><br/>
+                <p class="city">{{user.city}}</p>
+              </div>
+            </div>
+          </a>
+        </button>
       </li>
-    </ul> -->
+    </ul>
   </div>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="explore">
+  <p>팔로우할 만한 계정 둘러보기</p>
+  <div class="accounts">
+    <app-account-card></app-account-card>
+  </div>
+
+  <p>탐색 탭</p>
+  <div class="explore-image1">
+    <div class="img_wrapper1-1"><img [src]="imagedata1[0]" /></div>
+    <div class="img_wrapper1-2"><img [src]="imagedata1[1]" /></div>
+    <div class="img_wrapper1-3"><img [src]="imagedata1[2]" /></div>
+  </div>
+  <div class="explore-image2" *ngFor="let item of imagedata2">
+    <div class="img_wrapper2">
+      <img [src]="item" />
+    </div>
+  </div>
+</div>

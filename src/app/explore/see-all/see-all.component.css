@@ -1,0 +1,115 @@
+.seeAll{
+    background-color: rgba(217, 217, 217, 0.2);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.title{
+    width: 650px;
+    margin: 70px auto 5px auto;
+    border-radius: 3px;
+}
+
+.title span{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.recommend-box {
+    position: relative;
+    width: 650px;
+    margin: 0 auto 10% auto;
+    background-color: white;
+    border-radius: 3px;
+    padding: 15px 0;
+}
+
+.recommend-grid{
+    display: grid;
+    grid-template-columns: 100px 1fr 120px;
+    grid-template-rows: 80px;
+}
+  
+.profile img {
+    width: 55px;
+    margin: 15px 20px;
+    border-radius: 30px;
+}
+  
+.name {
+    margin: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+}
+  
+.rcstatus {
+    position: relative;
+    margin: 1px;
+    font-size: 12.5px;
+    color: rgb(146, 146, 146);
+    text-align: left;
+}
+  
+.newfollow {
+    outline: none;
+    position: relative;
+    margin: 22px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(13, 131, 228);
+}
+  
+.followbtn {
+    outline: none;
+    position: relative;
+    margin: 22px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 30px;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 3px;
+    background-color: white;
+}
+  
+.modal-body img {
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 40px;
+}
+  
+.modal-body p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+  
+.unfollowbtn {
+    width: 100%;
+    background-color: white;
+    border: none;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+}
+  
+.cancelbtn {
+    width: 100%;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    outline: none;
+}
+  
+app-mypage-footer{
+    padding-left: 30% !important;
+}

@@ -1,0 +1,34 @@
+<div class="seeAll">
+  <div class="title"><span>추천</span></div>
+  <div class="recommend-box">
+    <div class="recommend-grid" *ngFor="let user of friendinfo; index as i">
+      <div class="profile" *ngIf=friendinfo><img [src]='friendinfo[i].avatar' /></div>
+
+      <div>
+        <div class="name" *ngIf=friendinfo><span>{{friendinfo[i].username}}</span></div>
+        <div class="rcstatus" *ngIf=friendinfo><span>{{friendinfo[i].name}}</span></div>
+        <span class="rcstatus">회원님을 팔로우합니다</span>
+      </div>
+
+      <div>
+        <button *ngIf="!friendinfo[i].following" class="newfollow" (click)="followchange(i)">팔로우</button>
+        <button *ngIf="friendinfo[i].following" class="followbtn" (click)="open(followmodal)">팔로잉</button>
+      </div>
+
+      <ng-template #followmodal let-modal class="modal-dialog modal-dialog-centered followmodal" role="document">
+        <div class="modal-body" *ngIf=friendinfo>
+          <img [src]="friendinfo[i].avatar" />
+          <p>{{friendinfo[i].username}}님의 팔로우를 취소하시겠어요?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="unfollowbtn" (click)="followchange(i)">팔로우 취소</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cancelbtn" data-dismiss="modal" (click)="modal.dismiss()">취소</button>
+        </div>
+      </ng-template>
+
+    </div>
+  </div>
+  <app-mypage-footer></app-mypage-footer>
+</div>

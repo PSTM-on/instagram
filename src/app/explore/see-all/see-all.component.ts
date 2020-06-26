@@ -7,11 +7,11 @@ import { FriendinfoService } from '../../services/friendinfo.service';
 import { UserupdateService } from '../../services/userupdate.service';
 
 @Component({
-  selector: 'app-account-card',
-  templateUrl: './account-card.component.html',
-  styleUrls: ['./account-card.component.css']
+  selector: 'app-see-all',
+  templateUrl: './see-all.component.html',
+  styleUrls: ['./see-all.component.css']
 })
-export class AccountCardComponent implements OnInit {
+export class SeeAllComponent implements OnInit {
 
   closeResult: string;
   friendinfo: UserModel[];
@@ -65,5 +65,4 @@ export class AccountCardComponent implements OnInit {
     this.getFriendinfo();
     this.modalService.dismissAll();
   }
-
 }

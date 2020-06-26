@@ -13,11 +13,11 @@ import { MyinfoService } from '../../services/myinfo.service';
 })
 export class SavedComponent implements OnInit {
 
-  savedata: Array<string> = [];
+  savedata: string[] = [];
   closeResult: string;
   myinfo: UserModel;
-  friendinfo: UserModel;
-  comments: Array<CommentInputModel> = [];
+  friendinfo: UserModel[] = [];
+  comments: CommentInputModel[] = [];
 
   like = true;
   heartempty = '../../../../assets/heart-empty.svg';
@@ -38,6 +38,21 @@ export class SavedComponent implements OnInit {
     for (let i = 0; i < 4; i++) {
       this.savedata.push(`http://placeimg.com/300/300/tech/${i}`);
     }
+  }
+
+  getFriendinfo() {
+    this.friendinfoService.getFriendinfo()
+      .subscribe(friendinfo => this.friendinfo = friendinfo);
+  }
+
+  getMyinfo() {
+    this.myinfoService.getMyinfo()
+      .subscribe(myinfo => this.myinfo = myinfo);
+  }
+
+  addComment(comment: any): void {
+    this.comments.push(comment.value);
+    comment.value = '';
   }
 
   open(content) {
@@ -63,18 +78,4 @@ export class SavedComponent implements OnInit {
     }
   }
 
-  getFriendinfo() {
-    this.friendinfoService.getFriendinfo()
-      .subscribe(friendinfo => this.friendinfo = friendinfo);
-  }
-
-  getMyinfo() {
-    this.myinfoService.getMyinfo()
-      .subscribe(myinfo => this.myinfo = myinfo);
-  }
-
-  addComment(comment: any): void {
-    this.comments.push(comment.value);
-    comment.value = '';
-  }
 }

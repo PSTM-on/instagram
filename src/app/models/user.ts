@@ -1,5 +1,6 @@
 export interface UserModel {
   id: string;
+  pw: string;
   name: string;
   username: string;
   email: string;
@@ -8,5 +9,6 @@ export interface UserModel {
   postimage: string;
   avatar: string;
   comment: string;
-  pw?: string;
+  following: boolean;
+  follower: boolean;
 }

@@ -51,27 +51,19 @@
     margin-right: auto;
     width: 70%;
     text-align: center;
+    align-content: center;
+    border-top: 0.5px solid rgb(199, 199, 199);
 }
 
 .nav-pills {
-    margin: 0;
-    padding: 0 15%;
+    margin: 0 15%;
+    padding: 0;
     text-align: center;
     align-content: center;
 }
 
-.lefttab {
-    margin-left: 20%;
-    margin-right: 3%;
-}
-
 .tab{
-    margin: 0 3%;
-}
-
-.righttab{
-    margin-right: 3%;
-    margin-left: 3%;
+    margin: 0 5%;
 }
 
 .tabcontent .myimage{

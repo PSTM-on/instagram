@@ -15,15 +15,14 @@ export class HomeComponent implements OnInit {
 
   allusers: UserModel[];
   loginUser = null;
+  id: string ;
+  pw: string;
 
   iphone = '../../../assets/iphone.gif';
   biglogo = '../../../assets/logobig.PNG';
   facebook = '../../../assets/facebook.PNG';
   appstore = '../../../assets/appstore.PNG';
   googleplay = '../../../assets/googleplay.PNG';
-
-  id: string ;
-  pw: string;
 
   constructor(
     private location: Location,
@@ -34,8 +33,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getLoginUser();
     this.getAllUsers();
+    this.getLoginUser();
   }
 
   getAllUsers() {
@@ -49,16 +48,13 @@ export class HomeComponent implements OnInit {
   }
 
   login(){
-    for (let i = 0 ; i < 10 ; i++){
-      if (this.id === String(this.allusers[i].id) && this.pw === String(this.allusers[i].pw)){
-        this.myinfoService.loginUser = i;
-        this.loginUser = i;
-        this.myinfoService.setMyinfo();
-        this.friendinfoService.setFriendinfo();
-        this.location.go('/');
-        break;
-      }
+    const num = Number(this.id) - 1;
+    if (String(this.allusers[num].pw) === this.pw){
+      this.myinfoService.loginUser = num;
+      this.loginUser = num;
+      this.myinfoService.setMyinfo();
+      this.friendinfoService.setFriendinfo();
+      this.location.go('/');
     }
   }
-
 }

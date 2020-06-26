@@ -18,11 +18,35 @@
     <div ngbDropdown class="d-inline-block">
       <button class="navigation_icon" id="dropdownBasic1" ngbDropdownToggle><img [src]="likeIcon" /></button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <button ngbDropdownItem>Action - 1</button>
+        <button ngbDropdownItem>
+          <a routerLink="/{{friendinfo[1].username}}">
+            <img class="profileimage" [src]="friendinfo[1].avatar" />
+            <p class="username">{{friendinfo[1].username}}님이 회원님을 팔로우하기 시작했습니다.</p>
+          </a>
+          <button *ngIf="!friendinfo[1].following" class="newfollow" (click)="followchange(1)">팔로우</button>
+          <button *ngIf="friendinfo[1].following" class="followbtn" (click)="open(followmodal)">팔로잉</button>
+        </button>
+
+
+
+
         <div class="dropdown-divider"></div>
-        <button ngbDropdownItem>Another Action</button>
+        <button ngbDropdownItem>
+          <a routerLink="/{{friendinfo[2].username}}">
+            <img class="profileimage" [src]="friendinfo[2].avatar" />
+            <p class="username">{{friendinfo[2].username}}님이 회원님의 사진을 좋아합니다.</p>
+          </a>
+          <img class="smallpost" [src]="friendinfo[2].postimage"/>
+        </button>
+
         <div class="dropdown-divider"></div>
-        <button ngbDropdownItem>Something else is here</button>
+        <button ngbDropdownItem>
+          <a routerLink="/{{friendinfo[3].username}}">
+            <img class="profileimage" [src]="friendinfo[3].avatar" />
+            <p class="username">{{friendinfo[3].username}}님이 댓글에서 회원님을 언급했습니다.</p>
+          </a>
+          <img class="smallpost" [src]="friendinfo[3].postimage"/>
+        </button>
       </div>
     </div>
 
@@ -31,3 +55,18 @@
     </button>
   </div>
 </div>
+
+<ng-template #followmodal let-modal class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content" *ngIf="friendinfo">
+    <div class="modal-body">
+      <img [src]="friendinfo[1].avatar" />
+      <p>{{friendinfo[1].username}}님의 팔로우를 취소하시겠어요?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="unfollowbtn" (click)="followchange(1)">팔로우 취소</button>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="cancelbtn" data-dismiss="modal" (click)="modal.dismiss()">취소</button>
+    </div>
+  </div>
+</ng-template>

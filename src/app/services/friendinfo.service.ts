@@ -10,7 +10,8 @@ import { MyinfoService } from './myinfo.service';
 })
 export class FriendinfoService {
 
-  friendinfo: UserModel;
+  friendinfo: UserModel[] = [];
+  searchfriend: UserModel[] = [];
 
   constructor(
     private allusersService: AllusersService,
@@ -33,13 +34,25 @@ export class FriendinfoService {
     this.friendinfo = JSON.parse(friendstring);
   }
 
-  getFriendinfo(): Observable<UserModel> {
+  getFriendinfo(): Observable<UserModel[]> {
     // this.friendinfo = JSON.parse(localStorage.getItem('friendinfo'));
     return of (this.friendinfo);
   }
 
   followUpdate(i, updatedvalue){
     this.friendinfo[i].following = updatedvalue;
+  }
+
+  searchFriend(term: string): Observable<UserModel[]> {
+    this.searchfriend = [];
+    if (!term.trim()) { return of([]); }
+    for (const user of this.friendinfo){
+      term = term.toLowerCase();
+      if (user.username.toLowerCase().includes(term)) {
+        this.searchfriend.push(user);
+      }
+    }
+    return of(this.searchfriend);
   }
 
 }
